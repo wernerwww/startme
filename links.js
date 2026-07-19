@@ -12,6 +12,7 @@ const quickLinks = [
   { name: "Link 3", url: "https" },
   { name: "Link 4", url: "https" },
   { name: "Link 5", url: "https" },
+  { name: "Link 6", url: "https" },
 ];
 
 const columns = [
