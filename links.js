@@ -60,10 +60,10 @@ const columns = [
   {
     title: "Sonstiges",
     links: [
-      { name: "nn", url: "https" },
-      { name: "nn", url: "https" },
-      { name: "nn", url: "https" },
-      { name: "nn", url: "https" },
+      { name: "Github", url: "https://github.com/wernerwww/startme/edit/main/links.js" },
+      { name: "Kalender", url: "https://calendar.google.com/calendar/u/0/r" },
+      { name: "OneDrive", url: "https://onedrive.live.com" },
+      { name: "--------", url: "https" },
 
     ]
   },
