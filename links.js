@@ -40,7 +40,7 @@ const columns = [
       { name: "Perplexity", url: "https://www.perplexity.ai" },
       { name: "----BBH-ev", url: "https://bbh-ev.org/" },
       { name: "Bitwarden", url: "https://bitwarden.com/" },
-      { name: "Fritz extern",  url: "https://xdgaxid85bzxglpl.myfritz.net:42559/" },
+      { name: "Fritz extern",  url: "https://xdgaxid85bzxglpl.myfritz.net:42559/", icon: "icons/fritzbox.png"  },
       { name: "Github", url: "https://github.com/wernerwww/startme/" },
       { name: "Kalender", url: "https://calendar.google.com/calendar/u/0/r" },
       { name: "OneDrive", url: "https://onedrive.live.com" },
@@ -72,9 +72,9 @@ const columns = [
       { name: "----", url: "https" },
       { name: "ChinaHandy", url: "https://www.smartzone.de/neues/" },
       { name: "----", url: "https" },
-      { name: "GBVH", url: "https://www.gartenbauverein-haslach.de/" icon: "icons/gbvh.png" },
-      { name: "GBV-Fotos", url: "https://fotos.gbv-haslach.de/" icon: "icons/gbvh.png" },
-      { name: "GBV-Dokum", url: "https://fileman.gbv-haslach.de/#/" icon: "icons/gbvh.png" },
+      { name: "GBVH", url: "https://www.gartenbauverein-haslach.de/", icon: "icons/gbvh.png" },
+      { name: "GBV-Fotos", url: "https://fotos.gbv-haslach.de/", icon: "icons/gbvh.png" },
+      { name: "GBV-Dokum", url: "https://fileman.gbv-haslach.de/#/", icon: "icons/gbvh.png" },
     ]
   },
 ];
