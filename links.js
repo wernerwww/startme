@@ -20,25 +20,25 @@ const columns = [
   {
     title: "Wichtig",
     links: [
-      { name: "GitHub", url: "https://github.com" },
-      { name: "Vercel", url: "https://vercel.com" },
-      { name: "Figma",  url: "https://figma.com" },
-      { name: "Notion", url: "https://notion.so" },
+      { name: "GitHub", url: "https" },
+      { name: "Vercel", url: "https" },
+      { name: "Figma",  url: "https" },
+      { name: "Notion", url: "https" },
     ]
   },
   {
     title: "Home",
     links: [
       { name: "MDN Web Docs", url: "http://192.168.178.12:2283" },
-      { name: "React Docs",   url: "https://react.dev" },
+      { name: "React Docs",   url: "https" },
     ]
   },
   {
     title: "Sonstiges",
     links: [
-      { name: "Hacker News", url: "https://news.ycombinator.com" },
-      { name: "Twitter/X",   url: "https://x.com" },
-      { name: "Reddit",      url: "https://reddit.com" },
+      { name: "Hacker News", url: "https" },
+      { name: "Twitter/X",   url: "https" },
+      { name: "Reddit",      url: "https" },
     ]
   },
 ];
