@@ -46,21 +46,22 @@ const columns = [
       { name: "OneDrive", url: "https://onedrive.live.com" },
     ]
   },
-  {
+    {
     title: "Home",
     links: [
-      { name: "OMV", url: "http://192.168.178.12:8888/#/login" },
-      { name: "Paperless",   url: "http://192.168.178.12:8010/accounts/login/?next=/" },
-      { name: "Immich",   url: "http://192.168.178.12:2283" },
-      { name: "Jellyfin",   url: "http://192.168.178.12:8096/web/index.html#/home" },
-      { name: "Fritzbox",   url: "http://192.168.178.1/" },
-      { name: "FritzRepeater",   url: "http://192.168.178.7/" },
-      { name: "Drucker",   url: "http://192.168.178.32/general/status.html" },
+      { name: "OMV", url: "http://192.168.178.12:8888/#/login", icon: "icons/omv.png" },
+      { name: "Paperless", url: "http://192.168.178.12:8010/accounts/login/?next=/", icon: "icons/paperless.png" },
+      { name: "Immich", url: "http://192.168.178.12:2283", icon: "icons/immich.png" },
+      { name: "Jellyfin", url: "http://192.168.178.12:8096/web/index.html#/home", icon: "icons/jellyfin.png" },
+      { name: "Fritzbox", url: "http://192.168.178.1/", icon: "icons/fritzbox.png" },
+      { name: "FritzRepeater", url: "http://192.168.178.7/", icon: "icons/fritzbox.png" },
+      { name: "Drucker", url: "http://192.168.178.32/general/status.html", icon: "icons/printer.png" },
       { name: "----------", url: "https" }, 
-      { name: "Telekom",   url: "https://www.telekom.de/kundencenter/rechnungsuebersicht" },
-      { name: "Vodafone",   url: "https://www.vodafone.de/meinvodafone/services/" },
+      { name: "Telekom", url: "https://www.telekom.de/kundencenter/rechnungsuebersicht" }, // Holt sich das Icon weiterhin automatisch!
+      { name: "Vodafone", url: "https://www.vodafone.de/meinvodafone/services/" },     // Holt sich das Icon weiterhin automatisch!
     ]
   },
+
   {
     title: "Sonstiges",
     links: [
