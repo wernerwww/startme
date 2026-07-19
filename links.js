@@ -7,13 +7,13 @@
 
 const columns = [
   {
-    title: "Täglich",
+    title: "19-08-2026",
     links: [
       { name: "Caschys Blog", url: "https://stadt-bremerhaven.de/" },
       { name: "TELEPOLIS", url: "https://www.heise.de/tp/" },
       { name: "Kuketz IT",  url: "https://www.kuketz-blog.de/" },
-      { name: "NN",  url: "https" },
-      { name: "NN",  url: "https" },
+      { name: "Golem",  url: "https://www.golem.de/" },
+      { name: "NachDenkSeiten",  url: "https://www.nachdenkseiten.de/" },
       { name: "TT",  url: "https://www.traunsteiner-tagblatt.de/" },   
     ]
   },
@@ -31,6 +31,10 @@ const columns = [
     links: [
       { name: "MDN Web Docs", url: "http://192.168.178.12:2283" },
       { name: "React Docs",   url: "https" },
+      { name: "React Docs",   url: "https" },
+      { name: "React Docs",   url: "https" },
+      { name: "React Docs",   url: "https" },
+      { name: "React Docs",   url: "https" },
     ]
   },
   {
@@ -38,6 +42,13 @@ const columns = [
     links: [
       { name: "Hacker News", url: "https" },
       { name: "Twitter/X",   url: "https" },
+      { name: "Reddit",      url: "https" },
+      { name: "Reddit",      url: "https" },
+      { name: "Reddit",      url: "https" },
+      { name: "Reddit",      url: "https" },
+      { name: "Reddit",      url: "https" },
+      { name: "Reddit",      url: "https" },
+      { name: "Reddit",      url: "https" }, 
       { name: "Reddit",      url: "https" },
     ]
   },
