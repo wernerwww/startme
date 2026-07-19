@@ -25,6 +25,9 @@ const columns = [
       { name: "Golem",  url: "https://www.golem.de/" },
       { name: "NachDenkSeiten",  url: "https://www.nachdenkseiten.de/" },
       { name: "Trausteiner",  url: "https://www.traunsteiner-tagblatt.de/" },   
+      { name: "Traunstein", url: "https://www.traunstein.de/" }, 
+      { name: "Deskmodder", url: "https://www.deskmodder.de/blog/" }, 
+      { name: "----------", url: "https" },   
     ]
   },
   {
@@ -35,11 +38,12 @@ const columns = [
       { name: "Claude", url: "https://claude.ai" },
       { name: "Copilote", url: "https://copilot.microsoft.com" },
       { name: "Perplexity", url: "https://www.perplexity.ai" },
-      { name: "----------", url: "https" }, 
-      { name: "BBH-ev", url: "https://bbh-ev.org/" },
+      { name: "----BBH-ev", url: "https://bbh-ev.org/" },
       { name: "Bitwarden", url: "https://bitwarden.com/" },
       { name: "Fritz extern",  url: "https://xdgaxid85bzxglpl.myfritz.net:42559/" },
-
+      { name: "Github", url: "https://github.com/wernerwww/startme/edit/main/links.js" },
+      { name: "Kalender", url: "https://calendar.google.com/calendar/u/0/r" },
+      { name: "OneDrive", url: "https://onedrive.live.com" },
     ]
   },
   {
@@ -60,11 +64,17 @@ const columns = [
   {
     title: "Sonstiges",
     links: [
-      { name: "Github", url: "https://github.com/wernerwww/startme/edit/main/links.js" },
-      { name: "Kalender", url: "https://calendar.google.com/calendar/u/0/r" },
+      { name: "Cruiselevel", url: "https://cruiselevel.de/" },
+      { name: "flightnews24", url: "https://flightnews24.de/" },
       { name: "OneDrive", url: "https://onedrive.live.com" },
-      { name: "--------", url: "https" },
-
+      { name: "flusi.info", url: "https://www.flusi.info/forum/" },
+      { name: "FSelite", url: "https://fselite.net/latest/" },
+      { name: "----", url: "https" },
+      { name: "ChinaHandy", url: "https://www.smartzone.de/neues/" },
+      { name: "----", url: "https" },
+      { name: "GBVH", url: "https://www.gartenbauverein-haslach.de/" },
+      { name: "GBV-Fotos", url: "https://fotos.gbv-haslach.de/" },
+      { name: "GBV-Dokum", url: "https://fileman.gbv-haslach.de/#/" },
     ]
   },
 ];
