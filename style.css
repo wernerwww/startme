@@ -29,6 +29,46 @@ header{margin-bottom:36px;}
 h1{font-size:32px;margin:0 0 8px;color:#fff;font-weight:600;}
 .sub{color:var(--text-dim);font-size:14px;line-height:1.6;max-width:600px;}
 
+.quick-links{
+  display:grid;
+  grid-template-columns:repeat(5, 1fr);
+  gap:14px;
+  margin-bottom:32px;
+}
+@media (max-width: 1000px){ .quick-links{grid-template-columns:repeat(3, 1fr);} }
+@media (max-width: 620px){ .quick-links{grid-template-columns:repeat(2, 1fr);gap:10px;margin-bottom:24px;} }
+
+.quick-btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:16px 14px;
+  border-radius:10px;
+  background:linear-gradient(180deg, #1a7f37, #2ea043);
+  border:1px solid var(--accent);
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:.01em;
+  transition:transform .12s ease, box-shadow .12s ease, filter .12s ease;
+}
+.quick-btn:hover{
+  transform:translateY(-2px);
+  filter:brightness(1.1);
+  box-shadow:0 6px 20px rgba(63,185,80,.25);
+}
+.quick-btn img{
+  width:20px;height:20px;border-radius:5px;flex-shrink:0;
+  background:#0d1117;
+}
+.quick-btn span{
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
 .board{
   display:grid;
   grid-template-columns:repeat(4, 1fr);
