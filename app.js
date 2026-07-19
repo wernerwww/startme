@@ -1,23 +1,36 @@
-function favicon(url){
-  try{
-    const domain = new URL(url).hostname;
+function getFavicon(linkObj) {
+  // 1. Wenn ein benutzerdefiniertes/lokales Icon definiert ist, verwende dieses
+  if (linkObj.icon) {
+    return linkObj.icon;
+  }
+  
+  // 2. Andernfalls automatisches Icon über DuckDuckGo holen
+  try {
+    const domain = new URL(linkObj.url).hostname;
     return `https://icons.duckduckgo.com/ip3/${domain}.ico`;
-  }catch(e){
+  } catch(e) {
     return '';
   }
 }
 
-function faviconFallback(url){
-  try{
-    const domain = new URL(url).hostname;
+function getFaviconFallback(linkObj) {
+  // Wenn ein lokales Icon definiert ist, nutzt auch der Fallback dieses
+  if (linkObj.icon) {
+    return linkObj.icon;
+  }
+  
+  // Andernfalls Fallback über Google holen
+  try {
+    const domain = new URL(linkObj.url).hostname;
     return `https://www.google.com/s2/favicons?sz=64&domain=${domain}`;
-  }catch(e){
+  } catch(e) {
     return '';
   }
 }
 
-function renderQuickLinks(){
+function renderQuickLinks() {
   const bar = document.getElementById('quickLinks');
+  if (!bar) return;
   bar.innerHTML = '';
   quickLinks.forEach(l => {
     const a = document.createElement('a');
@@ -25,29 +38,32 @@ function renderQuickLinks(){
     a.href = l.url;
     a.target = '_blank';
     a.rel = 'noopener';
-    a.innerHTML = `<img src="${favicon(l.url)}" data-fallback="${faviconFallback(l.url)}" onerror="this.onerror=null;this.src=this.dataset.fallback" alt=""><span>${l.name}</span>`;
+    
+    // Übergibt das ganze Objekt 'l' statt nur der URL
+    a.innerHTML = `<img src="${getFavicon(l)}" data-fallback="${getFaviconFallback(l)}" onerror="this.onerror=null;this.src=this.dataset.fallback" alt=""><span>${l.name}</span>`;
     bar.appendChild(a);
   });
 }
 
-function render(){
+function render() {
   renderQuickLinks();
   const board = document.getElementById('board');
+  if (!board) return;
   board.innerHTML = '';
 
   columns.forEach((col) => {
     const colEl = document.createElement('div');
     colEl.className = 'column';
     colEl.innerHTML = `
-      <div class="col-head">
+      <div class=\"col-head\">
         <h2>${col.title}</h2>
-        <div style="display:flex;align-items:center;gap:8px;">
-          <span class="count">${col.links.length}</span>
-          <span class="chevron">▾</span>
+        <div style=\"display:flex;align-items:center;gap:8px;\">
+          <span class=\"count\">${col.links.length}</span>
+          <span class=\"chevron\">▾</span>
         </div>
       </div>
-      <div class="col-body">
-        <div class="tiles"></div>
+      <div class=\"col-body\">
+        <div class=\"tiles\"></div>
       </div>
     `;
 
@@ -58,16 +74,22 @@ function render(){
       a.href = l.url;
       a.target = '_blank';
       a.rel = 'noopener';
-      a.innerHTML = `<img src="${favicon(l.url)}" data-fallback="${faviconFallback(l.url)}" onerror="this.onerror=null;this.src=this.dataset.fallback" alt=""><span>${l.name}</span><span class="arrow">↗</span>`;
+      
+      // Übergibt das ganze Objekt 'l' statt nur der URL
+      a.innerHTML = `<img src="${getFavicon(l)}" data-fallback="${getFaviconFallback(l)}" onerror="this.onerror=null;this.src=this.dataset.fallback" alt=""><span>${l.name}</span>`;
       tiles.appendChild(a);
-    });
-
-    colEl.querySelector('.col-head').addEventListener('click', () => {
-      colEl.classList.toggle('collapsed');
     });
 
     board.appendChild(colEl);
   });
+
+  // Event Listener für das Auf- und Zuklappen der Spalten
+  document.querySelectorAll('.col-head').forEach(head => {
+    head.addEventListener('click', () => {
+      head.parentElement.classList.toggle('collapsed');
+    });
+  });
 }
 
-render();
+// Initiales Rendern beim Laden der Seite
+document.addEventListener('DOMContentLoaded', render);
