@@ -7,7 +7,22 @@ function favicon(url){
   }
 }
 
+function renderQuickLinks(){
+  const bar = document.getElementById('quickLinks');
+  bar.innerHTML = '';
+  quickLinks.forEach(l => {
+    const a = document.createElement('a');
+    a.className = 'quick-btn';
+    a.href = l.url;
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.innerHTML = `<img src="${favicon(l.url)}" alt=""><span>${l.name}</span>`;
+    bar.appendChild(a);
+  });
+}
+
 function render(){
+  renderQuickLinks();
   const board = document.getElementById('board');
   board.innerHTML = '';
 
