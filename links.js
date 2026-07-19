@@ -41,7 +41,7 @@ const columns = [
       { name: "----BBH-ev", url: "https://bbh-ev.org/" },
       { name: "Bitwarden", url: "https://bitwarden.com/" },
       { name: "Fritz extern",  url: "https://xdgaxid85bzxglpl.myfritz.net:42559/" },
-      { name: "Github", url: "https://github.com/wernerwww/startme/edit/main/links.js" },
+      { name: "Github", url: "https://github.com/wernerwww/startme/" },
       { name: "Kalender", url: "https://calendar.google.com/calendar/u/0/r" },
       { name: "OneDrive", url: "https://onedrive.live.com" },
     ]
