@@ -1,6 +1,15 @@
 function favicon(url){
   try{
     const domain = new URL(url).hostname;
+    return `https://icons.duckduckgo.com/ip3/${domain}.ico`;
+  }catch(e){
+    return '';
+  }
+}
+
+function faviconFallback(url){
+  try{
+    const domain = new URL(url).hostname;
     return `https://www.google.com/s2/favicons?sz=64&domain=${domain}`;
   }catch(e){
     return '';
@@ -16,7 +25,7 @@ function renderQuickLinks(){
     a.href = l.url;
     a.target = '_blank';
     a.rel = 'noopener';
-    a.innerHTML = `<img src="${favicon(l.url)}" alt=""><span>${l.name}</span>`;
+    a.innerHTML = `<img src="${favicon(l.url)}" data-fallback="${faviconFallback(l.url)}" onerror="this.onerror=null;this.src=this.dataset.fallback" alt=""><span>${l.name}</span>`;
     bar.appendChild(a);
   });
 }
@@ -49,7 +58,7 @@ function render(){
       a.href = l.url;
       a.target = '_blank';
       a.rel = 'noopener';
-      a.innerHTML = `<img src="${favicon(l.url)}" alt=""><span>${l.name}</span><span class="arrow">↗</span>`;
+      a.innerHTML = `<img src="${favicon(l.url)}" data-fallback="${faviconFallback(l.url)}" onerror="this.onerror=null;this.src=this.dataset.fallback" alt=""><span>${l.name}</span><span class="arrow">↗</span>`;
       tiles.appendChild(a);
     });
 
