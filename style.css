@@ -60,7 +60,7 @@ h1{font-size:32px;margin:0 0 8px;color:#fff;font-weight:600;}
   box-shadow:0 6px 20px rgba(63,185,80,.25);
 }
 .quick-btn img{
-  width:20px;height:20px;border-radius:5px;flex-shrink:0;
+  width:32px;height:32px;border-radius:5px;flex-shrink:0;
   background:#0d1117;
 }
 .quick-btn span{
@@ -143,7 +143,7 @@ h1{font-size:32px;margin:0 0 8px;color:#fff;font-weight:600;}
 }
 .tile:hover{background:#1c2230;border-color:var(--border);transform:translateX(2px);}
 .tile img{
-  width:18px;height:18px;border-radius:4px;flex-shrink:0;
+  width:24px;height:24px;border-radius:4px;flex-shrink:0;
   background:#0d1117;
 }
 .tile span{
