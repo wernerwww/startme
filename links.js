@@ -67,7 +67,6 @@ const columns = [
     links: [
       { name: "Cruiselevel", url: "https://cruiselevel.de/" },
       { name: "flightnews24", url: "https://flightnews24.de/" },
-      { name: "OneDrive", url: "https://onedrive.live.com" },
       { name: "flusi.info", url: "https://www.flusi.info/forum/" },
       { name: "FSelite", url: "https://fselite.net/latest/" },
       { name: "----", url: "https" },
