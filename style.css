@@ -36,7 +36,17 @@ h1{font-size:32px;margin:0 0 8px;color:#fff;font-weight:600;}
   align-items:start;
 }
 @media (max-width: 1000px){ .board{grid-template-columns:repeat(2, 1fr);} }
-@media (max-width: 620px){ .board{grid-template-columns:1fr;} }
+@media (max-width: 620px){
+  .board{grid-template-columns:1fr;gap:14px;}
+  body{padding:28px 16px 56px;}
+  header{margin-bottom:24px;}
+  h1{font-size:24px;}
+  .sub{font-size:13px;}
+  .eyebrow{font-size:11px;}
+  .col-head{padding:12px 14px;}
+  .tile{padding:11px 10px;font-size:14px;}
+  .tile .arrow{opacity:1;}
+}
 
 .column{
   border:1px solid var(--border);
