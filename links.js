@@ -72,9 +72,9 @@ const columns = [
       { name: "----", url: "https" },
       { name: "ChinaHandy", url: "https://www.smartzone.de/neues/" },
       { name: "----", url: "https" },
-      { name: "GBVH", url: "https://www.gartenbauverein-haslach.de/" },
-      { name: "GBV-Fotos", url: "https://fotos.gbv-haslach.de/" },
-      { name: "GBV-Dokum", url: "https://fileman.gbv-haslach.de/#/" },
+      { name: "GBVH", url: "https://www.gartenbauverein-haslach.de/" icon: "icons/gbvh.png" },
+      { name: "GBV-Fotos", url: "https://fotos.gbv-haslach.de/" icon: "icons/gbvh.png" },
+      { name: "GBV-Dokum", url: "https://fileman.gbv-haslach.de/#/" icon: "icons/gbvh.png" },
     ]
   },
 ];
