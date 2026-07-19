@@ -5,6 +5,15 @@
 // - Favicons werden automatisch anhand der URL geladen, kein extra Feld nötig
 // ===================================================================
 
+// Wichtige Links als große Buttons ganz oben (genau 5 Einträge empfohlen)
+const quickLinks = [
+  { name: "Link 1", url: "https" },
+  { name: "Link 2", url: "https" },
+  { name: "Link 3", url: "https" },
+  { name: "Link 4", url: "https" },
+  { name: "Link 5", url: "https" },
+];
+
 const columns = [
   {
     title: "19-08-2026",
