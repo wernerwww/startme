@@ -7,7 +7,7 @@
 
 // Wichtige Links als große Buttons ganz oben (genau 5 Einträge empfohlen)
 const quickLinks = [
-  { name: "Link 1", url: "https" },
+  { name: "Linkding", url: "https://linkding.adminforge.de/bookmarks" },
   { name: "Link 2", url: "https" },
   { name: "Link 3", url: "https" },
   { name: "Link 4", url: "https" },
