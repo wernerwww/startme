@@ -7,15 +7,18 @@
 
 const columns = [
   {
-    title: "Projekte",
+    title: "Täglich",
     links: [
-      { name: "claude-toolkit", url: "https://github.com/" },
-      { name: "portfolio-site", url: "https://github.com/" },
-      { name: "data-pipeline",  url: "https://github.com/" },
+      { name: "Caschys Blog", url: "https://stadt-bremerhaven.de/" },
+      { name: "TELEPOLIS", url: "https://www.heise.de/tp/" },
+      { name: "Kuketz IT",  url: "https://www.kuketz-blog.de/" },
+      { name: "NN",  url: "https" },
+      { name: "NN",  url: "https" },
+      { name: "TT",  url: "https://www.traunsteiner-tagblatt.de/" },   
     ]
   },
   {
-    title: "Tools",
+    title: "Wichtig",
     links: [
       { name: "GitHub", url: "https://github.com" },
       { name: "Vercel", url: "https://vercel.com" },
@@ -24,9 +27,9 @@ const columns = [
     ]
   },
   {
-    title: "Docs",
+    title: "Home",
     links: [
-      { name: "MDN Web Docs", url: "https://developer.mozilla.org" },
+      { name: "MDN Web Docs", url: "http://192.168.178.12:2283" },
       { name: "React Docs",   url: "https://react.dev" },
     ]
   },
