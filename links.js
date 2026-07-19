@@ -8,11 +8,11 @@
 // Wichtige Links als große Buttons ganz oben (genau 5 Einträge empfohlen)
 const quickLinks = [
   { name: "Linkding", url: "https://linkding.adminforge.de/bookmarks" },
-  { name: "Link 2", url: "https" },
-  { name: "Link 3", url: "https" },
-  { name: "Link 4", url: "https" },
-  { name: "Link 5", url: "https" },
-  { name: "Link 6", url: "https" },
+  { name: "Drive", url: "https://drive.google.com/drive/home" },
+  { name: "Discord", url: "https://discord.com/channels/@me" },
+  { name: "Amazon", url: "https://www.amazon.de" },
+  { name: "------", url: "https" },
+  { name: "FTW", url: "https://beta.ftwsim.de/FlyTheWorld-Internal/users/index.xhtml" },
 ];
 
 const columns = [
@@ -24,42 +24,47 @@ const columns = [
       { name: "Kuketz IT",  url: "https://www.kuketz-blog.de/" },
       { name: "Golem",  url: "https://www.golem.de/" },
       { name: "NachDenkSeiten",  url: "https://www.nachdenkseiten.de/" },
-      { name: "TT",  url: "https://www.traunsteiner-tagblatt.de/" },   
+      { name: "Trausteiner",  url: "https://www.traunsteiner-tagblatt.de/" },   
     ]
   },
   {
     title: "Wichtig",
     links: [
-      { name: "GitHub", url: "https" },
-      { name: "Vercel", url: "https" },
-      { name: "Figma",  url: "https" },
-      { name: "Notion", url: "https" },
+      { name: "Gemini", url: "https://gemini.google.com" },
+      { name: "ChatGpt", url: "https://chatgpt.com/" },
+      { name: "Claude", url: "https://claude.ai" },
+      { name: "Copilote", url: "https://copilot.microsoft.com" },
+      { name: "Perplexity", url: "https://www.perplexity.ai" },
+      { name: "----------", url: "https" }, 
+      { name: "BBH-ev", url: "https://bbh-ev.org/" },
+      { name: "Bitwarden", url: "https://bitwarden.com/" },
+      { name: "Fritz extern",  url: "https://xdgaxid85bzxglpl.myfritz.net:42559/" },
+
     ]
   },
   {
     title: "Home",
     links: [
-      { name: "MDN Web Docs", url: "http://192.168.178.12:2283" },
-      { name: "React Docs",   url: "https" },
-      { name: "React Docs",   url: "https" },
-      { name: "React Docs",   url: "https" },
-      { name: "React Docs",   url: "https" },
-      { name: "React Docs",   url: "https" },
+      { name: "OMV", url: "http://192.168.178.12:8888/#/login" },
+      { name: "Paperless",   url: "http://192.168.178.12:8010/accounts/login/?next=/" },
+      { name: "Immich",   url: "http://192.168.178.12:2283" },
+      { name: "Jellyfin",   url: "http://192.168.178.12:8096/web/index.html#/home" },
+      { name: "Fritzbox",   url: "http://192.168.178.1/" },
+      { name: "FritzRepeater",   url: "http://192.168.178.7/" },
+      { name: "Drucker",   url: "http://192.168.178.32/general/status.html" },
+      { name: "----------", url: "https" }, 
+      { name: "Telekom",   url: "https://www.telekom.de/kundencenter/rechnungsuebersicht" },
+      { name: "Vodafone",   url: "https://www.vodafone.de/meinvodafone/services/" },
     ]
   },
   {
     title: "Sonstiges",
     links: [
-      { name: "Hacker News", url: "https" },
-      { name: "Twitter/X",   url: "https" },
-      { name: "Reddit",      url: "https" },
-      { name: "Reddit",      url: "https" },
-      { name: "Reddit",      url: "https" },
-      { name: "Reddit",      url: "https" },
-      { name: "Reddit",      url: "https" },
-      { name: "Reddit",      url: "https" },
-      { name: "Reddit",      url: "https" }, 
-      { name: "Reddit",      url: "https" },
+      { name: "nn", url: "https" },
+      { name: "nn", url: "https" },
+      { name: "nn", url: "https" },
+      { name: "nn", url: "https" },
+
     ]
   },
 ];
