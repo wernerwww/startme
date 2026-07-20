@@ -1,3 +1,12 @@
+// Fallback-Version, falls die GitHub-API nicht erreichbar ist (z.B. lokal via file://)
+const VERSION = "1.0.0";
+
+// Repo im Format "user/repo" – für die automatische Build-Anzeige im Footer
+const REPO = "wernerwww/startme";
+
+const VERSION_CACHE_KEY = "startme_version_cache";
+const VERSION_CACHE_TTL = 1000 * 60 * 30; // 30 Minuten zwischenspeichern (GitHub-API: 60 Anfragen/Std. ohne Login)
+
 function getFavicon(linkObj) {
   // 1. Wenn ein benutzerdefiniertes/lokales Icon definiert ist, verwende dieses
   if (linkObj.icon) {
@@ -91,5 +100,48 @@ function render() {
   });
 }
 
+// Holt die letzte "pages-build-deployment" Build-Nummer von GitHub und zeigt sie im Footer
+async function loadVersion(){
+  const versionEl = document.getElementById('version');
+  if (!versionEl) return;
+
+  // Erst aus Cache anzeigen (vermeidet unnötige API-Anfragen)
+  try {
+    const cached = JSON.parse(sessionStorage.getItem(VERSION_CACHE_KEY) || 'null');
+    if (cached && (Date.now() - cached.ts) < VERSION_CACHE_TTL) {
+      versionEl.textContent = cached.text;
+      versionEl.title = cached.title || '';
+      return;
+    }
+  } catch(e) { /* sessionStorage evtl. nicht verfügbar, ignorieren */ }
+
+  // Fallback-Text sofort setzen, während geladen wird
+  versionEl.textContent = `v${VERSION}`;
+
+  try {
+    const res = await fetch(`https://api.github.com/repos/${REPO}/actions/runs?per_page=1`);
+    if (!res.ok) throw new Error('API-Fehler: ' + res.status);
+    const data = await res.json();
+    const run = data.workflow_runs && data.workflow_runs[0];
+    if (!run) throw new Error('Kein Workflow-Run gefunden');
+
+    const text = `Build #${run.run_number}`;
+    const title = `${run.name} · ${new Date(run.updated_at).toLocaleString('de-DE')}`;
+
+    versionEl.textContent = text;
+    versionEl.title = title;
+
+    try {
+      sessionStorage.setItem(VERSION_CACHE_KEY, JSON.stringify({ text, title, ts: Date.now() }));
+    } catch(e) { /* Speichern optional, kein Problem falls nicht möglich */ }
+  } catch (e) {
+    // Bei Fehler (offline, Rate-Limit, file://-Aufruf, privates Repo) bleibt der Fallback "v1.0.0" stehen
+    console.warn('Build-Version konnte nicht geladen werden, zeige Fallback:', e);
+  }
+}
+
 // Initiales Rendern beim Laden der Seite
-document.addEventListener('DOMContentLoaded', render);
+document.addEventListener('DOMContentLoaded', () => {
+  render();
+  loadVersion();
+});
