@@ -17,7 +17,7 @@ const quickLinks = [
 
 const columns = [
   {
-    title: "19-08-2026",
+    title: "Täglich",
     links: [
       { name: "Caschys Blog", url: "https://stadt-bremerhaven.de/" },
       { name: "TELEPOLIS", url: "https://www.heise.de/tp/" },
