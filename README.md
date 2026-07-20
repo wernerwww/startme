@@ -120,7 +120,29 @@ Nach dem Bearbeiten von `links.js` einfach die `index.html` im Browser neu laden
 
 ---
 
-## 3. Projektstruktur
+## 3. Versionsanzeige (automatisch aus dem GitHub-Build)
+
+Im Footer des Dashboards wird automatisch die aktuelle Build-Nummer von GitHub Pages angezeigt (z. B. `Build #44`) – ganz ohne eigenen Workflow. Das funktioniert, weil GitHub bei jedem Push auf den Pages-Branch intern automatisch den Workflow **"pages-build-deployment"** ausführt. Das Dashboard fragt beim Laden über die öffentliche GitHub-API den letzten Run dieses Workflows ab und zeigt dessen Nummer an.
+
+**Voraussetzung:** In `app.js` muss der Repo-Name korrekt eingetragen sein:
+
+```javascript
+const REPO = "wernerwww/startme";
+```
+
+**Funktionsweise / Fallback-Verhalten:**
+
+- Beim Laden der Seite wird kurz die statische Fallback-Version (`const VERSION = "1.0.0";`) angezeigt.
+- Anschließend wird die GitHub-API abgefragt und der Text im Footer auf `Build #<Nummer>` aktualisiert.
+- Ein Hover über die Anzeige zeigt Workflow-Name und Zeitpunkt als Tooltip.
+- Das Ergebnis wird 30 Minuten im `sessionStorage` zwischengespeichert, um das API-Limit (60 Anfragen/Std. ohne Login) zu schonen.
+- Falls die API nicht erreichbar ist (z. B. offline, Repo privat, oder die Seite wird lokal per `file://` statt über GitHub Pages geöffnet), bleibt die statische Fallback-Version `v1.0.0` stehen.
+
+> ℹ️ Damit die Anzeige funktioniert, muss das Repository **öffentlich** sein (private Repos benötigen für die Actions-API einen Zugriffstoken, was hier aus Sicherheitsgründen nicht eingebaut ist) und die Seite muss über eine echte URL (z. B. `https://wernerwww.github.io/startme/`) aufgerufen werden – nicht als lokale Datei.
+
+---
+
+## 4. Projektstruktur
 
 | Datei | Zweck |
 |---|---|
@@ -132,7 +154,7 @@ Nach dem Bearbeiten von `links.js` einfach die `index.html` im Browser neu laden
 
 ---
 
-## 4. Funktionen
+## 5. Funktionen
 
 - 4-Spalten-Raster, responsiv (2 Spalten auf Tablet, 1 Spalte auf Mobilgeräten)
 - Spalten lassen sich per Klick auf die Kopfzeile ein-/ausklappen
