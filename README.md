@@ -97,6 +97,23 @@ Favicons werden automatisch anhand der Domain der `url` geladen (über den Googl
 
 ⚠️ Wichtig: Die `url` muss eine vollständige, gültige Adresse sein (inkl. `https://`), sonst wird kein Favicon geladen und der Link funktioniert nicht. Platzhalter wie `"https"` (siehe aktuelle `links.js`) müssen durch echte Adressen ersetzt werden.
 
+### Icons für lokale Links (z. B. Server im Heimnetz)
+
+Für Links auf lokale IP-Adressen (z. B. `http://192.168.178.12:8888`) kann der Google-Favicon-Dienst kein Icon laden, da diese Adressen aus dem Internet nicht erreichbar sind. Für solche Fälle gibt es das Verzeichnis **`icons/`**, in dem eigene Icon-Dateien abgelegt werden können.
+
+Ein Link erhält ein lokales Icon über das optionale Feld `icon`:
+
+```javascript
+{ name: "OMV", url: "http://192.168.178.12:8888/#/login", icon: "icons/omv.png" },
+```
+
+**Vorgehen:**
+
+1. Eine Icon-Datei (z. B. `.png`, 64×64 px empfohlen) in das Verzeichnis `icons/` legen.
+2. Im Link-Eintrag in `links.js` das Feld `icon` mit dem relativen Pfad zur Datei ergänzen.
+
+Ist kein `icon`-Feld gesetzt, wird weiterhin automatisch das Favicon über die `url` geladen. Schlägt das Laden eines angegebenen lokalen Icons fehl (z. B. Datei nicht vorhanden), fällt das Dashboard automatisch auf das automatische Favicon zurück.
+
 ### Änderungen übernehmen
 
 Nach dem Bearbeiten von `links.js` einfach die `index.html` im Browser neu laden (F5) – es ist kein Build-Schritt nötig.
@@ -111,6 +128,7 @@ Nach dem Bearbeiten von `links.js` einfach die `index.html` im Browser neu laden
 | `app.js` | Rendering-Logik (baut die Spalten & Kacheln aus `links.js`) |
 | `links.js` | **Hier werden Links bearbeitet** |
 | `style.css` | Design/Layout (dunkles Theme) |
+| `icons/` | Eigene Icon-Dateien für lokale Links (siehe Abschnitt "Icons für lokale Links") |
 
 ---
 
@@ -120,4 +138,3 @@ Nach dem Bearbeiten von `links.js` einfach die `index.html` im Browser neu laden
 - Spalten lassen sich per Klick auf die Kopfzeile ein-/ausklappen
 - Automatisches Laden von Favicons anhand der URL
 - Kein Build-Prozess, keine Abhängigkeiten
-
