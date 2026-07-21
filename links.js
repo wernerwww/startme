@@ -34,6 +34,7 @@ const columns = [
     title: "Wichtig",
     links: [
       { name: "Gemini", url: "https://gemini.google.com" },
+      { name: "Gemini NB", url: "https://notebooklm.google.com/?hl=de-DE" },
       { name: "ChatGpt", url: "https://chatgpt.com/" },
       { name: "Claude", url: "https://claude.ai" },
       { name: "Copilote", url: "https://copilot.microsoft.com", icon: "icons/copilot.png"  },
