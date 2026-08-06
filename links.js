@@ -38,6 +38,7 @@ const columns = [
       { name: "DeepSeek", url: "https://chat.deepseek.com/" },
       { name: "ChatGpt", url: "https://chatgpt.com/" },
       { name: "Claude", url: "https://claude.ai" },
+      { name: "Grok", url: "https://grok.com/" },
       { name: "Copilote", url: "https://copilot.microsoft.com", icon: "icons/copilot.png"  },
       { name: "Perplexity", url: "https://www.perplexity.ai" },
       { name: "----BBH-ev", url: "https://bbh-ev.org/" },
