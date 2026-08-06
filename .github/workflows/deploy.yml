@@ -3,27 +3,21 @@ name: Deploy
 on:
   push:
     branches: [ main ]
-  workflow_dispatch:  # Ermöglicht manuellen Start 
+  workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 30  # ⬅️ Dein Timeout-Wert
+    timeout-minutes: 30
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
       
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
+      # Hier kommen NUR die Schritte, die DU brauchst
+      # z.B. für Python: actions/setup-python@v4
+      # oder für einen reinen Deployment-Script
       
-      - name: Install dependencies
-        run: npm install
-      
-      - name: Build
-        run: npm run build
-      
-      # Hier kommen deine Deployment-Schritte
       - name: Deploy
-        run: echo "Deployment-Logik hier einfügen"
+        run: |
+          echo "Deployment wird ausgeführt..."
+          # Deine Deployment-Befehle hier
