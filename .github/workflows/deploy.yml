@@ -3,7 +3,7 @@ name: Deploy
 on:
   push:
     branches: [ main ]
-  workflow_dispatch:  # Ermöglicht manuellen Start
+  workflow_dispatch:  # Ermöglicht manuellen Start 
 
 jobs:
   deploy:
