@@ -35,7 +35,7 @@ const columns = [
     links: [
       { name: "Gemini", url: "https://gemini.google.com" },
       { name: "Gemini NB", url: "https://notebooklm.google.com/?hl=de-DE" },
-      { name: "DeepSeek", url: "https://chat.deepseek.com/" },      
+      { name: "DeepSeek", url: "https://chat.deepseek.com/" },
       { name: "ChatGpt", url: "https://chatgpt.com/" },
       { name: "Claude", url: "https://claude.ai" },
       { name: "Copilote", url: "https://copilot.microsoft.com", icon: "icons/copilot.png"  },
