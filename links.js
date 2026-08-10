@@ -36,6 +36,7 @@ const columns = [
       { name: "Gemini", url: "https://gemini.google.com" },
       { name: "Gemini NB", url: "https://notebooklm.google.com/?hl=de-DE" },
       { name: "DeepSeek", url: "https://chat.deepseek.com/" },
+      { name: "Qwen", url: "https://chat.qwen.ai/" },     
       { name: "ChatGpt", url: "https://chatgpt.com/" },
       { name: "Claude", url: "https://claude.ai" },
       { name: "Grok", url: "https://grok.com/" },
@@ -43,7 +44,6 @@ const columns = [
       { name: "Perplexity", url: "https://www.perplexity.ai" },
       { name: "----BBH-ev", url: "https://bbh-ev.org/" },
       { name: "Bitwarden", url: "https://bitwarden.com/" },
-      { name: "Fritz extern",  url: "https://xdgaxid85bzxglpl.myfritz.net:42559/", icon: "icons/fritzbox.png"  },
       { name: "Github", url: "https://github.com/wernerwww/startme/" },
       { name: "Kalender", url: "https://calendar.google.com/calendar/u/0/r" },
       { name: "OneDrive", url: "https://onedrive.live.com" },
@@ -60,6 +60,7 @@ const columns = [
       { name: "FritzRepeater", url: "http://192.168.178.7/", icon: "icons/fritzbox.png" },
       { name: "Drucker", url: "http://192.168.178.32/general/status.html", icon: "icons/printer.png" },
       { name: "----------", url: "https" }, 
+      { name: "Fritz extern",  url: "https://xdgaxid85bzxglpl.myfritz.net:42559/", icon: "icons/fritzbox.png"  },
       { name: "Telekom", url: "https://www.telekom.de/kundencenter/rechnungsuebersicht" }, // Holt sich das Icon weiterhin automatisch!
       { name: "Vodafone", url: "https://www.vodafone.de/meinvodafone/services/" },     // Holt sich das Icon weiterhin automatisch!
     ]
