@@ -35,7 +35,7 @@ const columns = [
     links: [
       { name: "Gemini", url: "https://gemini.google.com" },
       { name: "Gemini NB", url: "https://notebooklm.google.com/?hl=de-DE" },
-      { name: "DeepSeek", url: "https://chat.deepseek.com/" icon: "icons/deepseek.png"  },
+      { name: "DeepSeek", url: "https://chat.deepseek.com/", icon: "icons/deepseek.png"  },
       { name: "Qwen", url: "https://chat.qwen.ai/" },     
       { name: "ChatGpt", url: "https://chatgpt.com/" },
       { name: "Claude", url: "https://claude.ai" },
@@ -44,7 +44,7 @@ const columns = [
       { name: "Perplexity", url: "https://www.perplexity.ai" },
       { name: "----BBH-ev", url: "https://bbh-ev.org/" },
       { name: "Bitwarden", url: "https://bitwarden.com/" },
-      { name: "Github", url: "https://github.com/wernerwww/startme/" icon: "icons/github.png"  },
+      { name: "Github", url: "https://github.com/wernerwww/startme/", icon: "icons/github.png"  },
       { name: "Kalender", url: "https://calendar.google.com/calendar/u/0/r" },
       { name: "OneDrive", url: "https://onedrive.live.com" },
     ]
