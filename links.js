@@ -56,6 +56,7 @@ const columns = [
       { name: "Paperless", url: "http://192.168.178.12:8010/accounts/login/?next=/", icon: "icons/paperless.png" },
       { name: "Immich", url: "http://192.168.178.12:2283", icon: "icons/immich.png" },
       { name: "Jellyfin", url: "http://192.168.178.12:8096/web/index.html#/home", icon: "icons/jellyfin.png" },
+      { name: "Syncthing", url: "http://192.168.178.12:8384", icon: "icons/syncthing.png" },
       { name: "Fritzbox", url: "http://192.168.178.1/", icon: "icons/fritzbox.png" },
       { name: "FritzRepeater", url: "http://192.168.178.7/", icon: "icons/fritzbox.png" },
       { name: "Drucker", url: "http://192.168.178.32/general/status.html", icon: "icons/printer.png" },
