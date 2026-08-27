@@ -11,7 +11,7 @@ const quickLinks = [
   { name: "Drive", url: "https://drive.google.com/drive/home" },
   { name: "Discord", url: "https://discord.com/channels/@me" },
   { name: "Amazon", url: "https://www.amazon.de" },
-  { name: "------", url: "https" },
+  { name: "SearXNG", url: "http://192.168.178.12:8088/" },
   { name: "FTW", url: "https://beta.ftwsim.de/FlyTheWorld-Internal/users/index.xhtml" },
 ];
 
@@ -36,8 +36,7 @@ const columns = [
       { name: "Gemini", url: "https://gemini.google.com" },
       { name: "Gemini NB", url: "https://notebooklm.google.com/?hl=de-DE" },
       { name: "DeepSeek", url: "https://chat.deepseek.com/", icon: "icons/deepseek.png"  },
-      { name: "Qwen", url: "https://chat.qwen.ai/" },     
-      { name: "ChatGpt", url: "https://chatgpt.com/" },
+      { name: "Qwen", url: "https://chat.qwen.ai/" },
       { name: "Claude", url: "https://claude.ai" },
       { name: "Grok", url: "https://grok.com/" },
       { name: "Copilote", url: "https://copilot.microsoft.com", icon: "icons/copilot.png"  },
