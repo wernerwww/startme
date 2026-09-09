@@ -26,7 +26,7 @@ const columns = [
       { name: "NachDenkSeiten",  url: "https://www.nachdenkseiten.de/" },
       { name: "Trausteiner",  url: "https://www.traunsteiner-tagblatt.de/" },   
       { name: "Traunstein", url: "https://www.traunstein.de/" }, 
-      { name: "Deskmodder", url: "https://www.deskmodder.de/blog/" }, 
+      { name: "Deskmodder", url: "https://www.deskmodder.de/blog/" },
       { name: "----------", url: "https" },   
     ]
   },
@@ -37,21 +37,20 @@ const columns = [
       { name: "Gemini NB", url: "https://notebooklm.google.com/?hl=de-DE" },
       { name: "DeepSeek", url: "https://chat.deepseek.com/", icon: "icons/deepseek.png"  },
       { name: "Qwen", url: "https://chat.qwen.ai/" },
-      { name: "Claude", url: "https://claude.ai" },
-      { name: "Grok", url: "https://grok.com/" },
-      { name: "Copilote", url: "https://copilot.microsoft.com", icon: "icons/copilot.png"  },
-      { name: "Perplexity", url: "https://www.perplexity.ai" },
       { name: "----BBH-ev", url: "https://bbh-ev.org/" },
       { name: "Bitwarden", url: "https://bitwarden.com/" },
       { name: "Github", url: "https://github.com/wernerwww/startme/", icon: "icons/github.png"  },
       { name: "Kalender", url: "https://calendar.google.com/calendar/u/0/r" },
       { name: "OneDrive", url: "https://onedrive.live.com" },
+      { name: "Telekom", url: "https://www.telekom.de/kundencenter/rechnungsuebersicht" }, // Holt sich das Icon weiterhin automatisch!
+      { name: "Vodafone", url: "https://www.vodafone.de/meinvodafone/services/" },     // Holt sich das Icon weiterhin automatisch!
     ]
   },
     {
     title: "Home",
     links: [
       { name: "OMV", url: "http://192.168.178.12:8888/#/login", icon: "icons/omv.png" },
+      { name: "Open Webui", url: "http://192.168.178.12:3000", icon: "icons/openwebui.png" },
       { name: "Paperless", url: "http://192.168.178.12:8010/accounts/login/?next=/", icon: "icons/paperless.png" },
       { name: "Immich", url: "http://192.168.178.12:2283", icon: "icons/immich.png" },
       { name: "Jellyfin", url: "http://192.168.178.12:8096/web/index.html#/home", icon: "icons/jellyfin.png" },
@@ -59,10 +58,8 @@ const columns = [
       { name: "Fritzbox", url: "http://192.168.178.1/", icon: "icons/fritzbox.png" },
       { name: "FritzRepeater", url: "http://192.168.178.7/", icon: "icons/fritzbox.png" },
       { name: "Drucker", url: "http://192.168.178.32/general/status.html", icon: "icons/printer.png" },
-      { name: "----------", url: "https" }, 
       { name: "Fritz extern",  url: "https://xdgaxid85bzxglpl.myfritz.net:42559/", icon: "icons/fritzbox.png"  },
-      { name: "Telekom", url: "https://www.telekom.de/kundencenter/rechnungsuebersicht" }, // Holt sich das Icon weiterhin automatisch!
-      { name: "Vodafone", url: "https://www.vodafone.de/meinvodafone/services/" },     // Holt sich das Icon weiterhin automatisch!
+      { name: "----------", url: "https" }, 
     ]
   },
 
