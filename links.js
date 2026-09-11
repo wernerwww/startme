@@ -51,6 +51,7 @@ const columns = [
     links: [
       { name: "OMV", url: "http://192.168.178.12:8888/#/login", icon: "icons/omv.png" },
       { name: "Open Webui", url: "http://192.168.178.12:3000", icon: "icons/openwebui.png" },
+      { name: "n8n", url: "http://192.168.178.12:5678", icon: "icons/n8n.png" },
       { name: "Paperless", url: "http://192.168.178.12:8010/accounts/login/?next=/", icon: "icons/paperless.png" },
       { name: "Immich", url: "http://192.168.178.12:2283", icon: "icons/immich.png" },
       { name: "Jellyfin", url: "http://192.168.178.12:8096/web/index.html#/home", icon: "icons/jellyfin.png" },
