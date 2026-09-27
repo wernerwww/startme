@@ -81,7 +81,7 @@ const columns = [
       { name: "GBVH", url: "https://www.gartenbauverein-haslach.de/", icon: "icons/gbvh.png" },
       { name: "GBVH-Test", url: "https://www.gbv-haslach.de/", icon: "icons/gbvh.png" },
       { name: "GBV-Fotos", url: "https://fotos.gbv-haslach.de/", icon: "icons/gbvh.png" },
-      { name: "GBV-Dokum", url: "https://fileman.gbv-haslach.de/#/", icon: "icons/gbvh.png" },
+      { name: "GBV-Doku", url: "https://fileman.gbv-haslach.de/#/", icon: "icons/gbvh.png" },
     ]
   },
 ];
