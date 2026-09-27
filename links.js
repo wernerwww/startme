@@ -79,6 +79,7 @@ const columns = [
       { name: "ChinaHandy", url: "https://www.smartzone.de/neues/" },
       { name: "----", url: "https" },
       { name: "GBVH", url: "https://www.gartenbauverein-haslach.de/", icon: "icons/gbvh.png" },
+      { name: "GBVH-Test", url: "https://www.gbv-haslach.de/", icon: "icons/gbvh.png" },
       { name: "GBV-Fotos", url: "https://fotos.gbv-haslach.de/", icon: "icons/gbvh.png" },
       { name: "GBV-Dokum", url: "https://fileman.gbv-haslach.de/#/", icon: "icons/gbvh.png" },
     ]
