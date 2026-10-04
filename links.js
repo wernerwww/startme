@@ -42,7 +42,7 @@ const columns = [
       { name: "Github", url: "https://github.com/wernerwww/startme/", icon: "icons/github.png"  },
       { name: "Kalender", url: "https://calendar.google.com/calendar/u/0/r" },
       { name: "OneDrive", url: "https://onedrive.live.com" },
-      { name: "Telekom", url: "https://www.telekom.de/kundencenter/rechnungsuebersicht" }, // Holt sich das Icon weiterhin automatisch!
+      { name: "->PDF-Tools", url: "https://pdf.adminforge.de/de/" },
       { name: "Vodafone", url: "https://www.vodafone.de/meinvodafone/services/" },     // Holt sich das Icon weiterhin automatisch!
     ]
   },
