@@ -62,7 +62,8 @@ const columns = [
 {
     title: "Home2",
     links: [
-      { name: "Fritzbox", url: "http://192.168.178.1/", icon: "icons/fritzbox.png" },
+      { name: "Fritzbox Kabel", url: "http://192.168.178.1/", icon: "icons/fritzbox.png" },
+      { name: "Fritzbox 7590", url: "http://192.168.178.3/", icon: "icons/fritzbox.png" },
       { name: "FritzRepeater", url: "http://192.168.178.7/", icon: "icons/fritzbox.png" },
       { name: "Drucker", url: "http://192.168.178.32/general/status.html", icon: "icons/printer.png" },
       { name: "Fritz extern",  url: "https://xdgaxid85bzxglpl.myfritz.net:42559/", icon: "icons/fritzbox.png"  },
