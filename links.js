@@ -34,7 +34,6 @@ const columns = [
     title: "Wichtig",
     links: [
       { name: "Gemini", url: "https://gemini.google.com" },
-      { name: "Gemini NB", url: "https://notebooklm.google.com/?hl=de-DE" },
       { name: "DeepSeek", url: "https://chat.deepseek.com/", icon: "icons/deepseek.png"  },
       { name: "Qwen", url: "https://chat.qwen.ai/" },
       { name: "----BBH-ev", url: "https://bbh-ev.org/" },
@@ -62,8 +61,8 @@ const columns = [
 {
     title: "Home2",
     links: [
-      { name: "Fritzbox Kabel", url: "http://192.168.178.1/", icon: "icons/fritzbox.png" },
-      { name: "Fritzbox 7590", url: "http://192.168.178.3/", icon: "icons/fritzbox.png" },
+      { name: "Fritz 6670 MP", url: "http://192.168.178.1/", icon: "icons/fritzbox.png" },
+      { name: "Fritz 7590 AX", url: "http://192.168.178.20/", icon: "icons/fritzbox.png" },
       { name: "FritzRepeater", url: "http://192.168.178.7/", icon: "icons/fritzbox.png" },
       { name: "Drucker", url: "http://192.168.178.32/general/status.html", icon: "icons/printer.png" },
       { name: "Fritz extern",  url: "https://xdgaxid85bzxglpl.myfritz.net:42559/", icon: "icons/fritzbox.png"  },
