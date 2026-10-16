@@ -62,8 +62,8 @@ const columns = [
     title: "Home2",
     links: [
       { name: "Fritz 6670 MP", url: "http://192.168.178.1/", icon: "icons/fritzbox.png" },
-      { name: "Fritz 7590 AX", url: "http://192.168.178.20/", icon: "icons/fritzbox.png" },
-      { name: "FritzRepeater", url: "http://192.168.178.7/", icon: "icons/fritzbox.png" },
+      { name: "Fritz 7590 AX", url: "http://192.168.178.30/", icon: "icons/fritzbox.png" },
+      { name: "FritzRepeater", url: "http://192.168.178.29/", icon: "icons/fritzbox.png" },
       { name: "Drucker", url: "http://192.168.178.32/general/status.html", icon: "icons/printer.png" },
       { name: "Fritz extern",  url: "https://xdgaxid85bzxglpl.myfritz.net:42559/", icon: "icons/fritzbox.png"  },
     ]
