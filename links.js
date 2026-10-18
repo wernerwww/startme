@@ -65,7 +65,7 @@ const columns = [
       { name: "Fritz 7590 AX", url: "http://192.168.178.30/", icon: "icons/fritzbox.png" },
       { name: "FritzRepeater", url: "http://192.168.178.29/", icon: "icons/fritzbox.png" },
       { name: "Drucker", url: "http://192.168.178.32/general/status.html", icon: "icons/printer.png" },
-      { name: "Fritz extern",  url: "https://xdgaxid85bzxglpl.myfritz.net:42559/", icon: "icons/fritzbox.png"  },
+      { name: "Fritz extern",  url: "https://cnqv0p3pspcmggak.myfritz.net:42559/", icon: "icons/fritzbox.png"  },
     ]
   },
   {
