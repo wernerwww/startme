@@ -7,6 +7,9 @@ const REPO = "wernerwww/startme";
 const VERSION_CACHE_KEY = "startme_version_cache";
 const VERSION_CACHE_TTL = 1000 * 60 * 30; // 30 Minuten zwischenspeichern (GitHub-API: 60 Anfragen/Std. ohne Login)
 
+// Aktive Seite im LocalStorage merken (Standard ist die erste Seite)
+let activePageId = localStorage.getItem("startme_active_page") || (typeof pages !== "undefined" && pages[0]?.id);
+
 function getFavicon(linkObj) {
   // 1. Wenn ein benutzerdefiniertes/lokales Icon definiert ist, verwende dieses
   if (linkObj.icon) {
@@ -37,24 +40,7 @@ function getFaviconFallback(linkObj) {
   }
 }
 
-function renderQuickLinks() {
-  const bar = document.getElementById('quickLinks');
-  if (!bar) return;
-  bar.innerHTML = '';
-  quickLinks.forEach(l => {
-    const a = document.createElement('a');
-    a.className = 'quick-btn';
-    a.href = l.url;
-    a.target = '_blank';
-    a.rel = 'noopener';
-    
-    // Übergibt das ganze Objekt 'l' statt nur der URL
-    a.innerHTML = `<img src="${getFavicon(l)}" data-fallback="${getFaviconFallback(l)}" onerror="this.onerror=null;this.src=this.dataset.fallback" alt=""><span>${l.name}</span>`;
-    bar.appendChild(a);
-  });
-}
-let activePageId = localStorage.getItem("startme_active_page") || (typeof pages !== "undefined" && pages[0]?.id);
-
+// Rendert die Reiter-Navigation oben für die verschiedenen Seiten
 function renderPageTabs() {
   let navContainer = document.getElementById("pageNav");
   if (!navContainer) {
@@ -66,8 +52,10 @@ function renderPageTabs() {
   }
   navContainer.innerHTML = "";
   
+  if (typeof pages === "undefined") return;
+
   pages.forEach(page => {
-    const btn = document.button || document.createElement("button");
+    const btn = document.createElement("button");
     const isAct = page.id === activePageId;
     btn.className = `page-tab ${isAct ? "active" : ""}`;
     btn.textContent = page.name;
@@ -79,25 +67,48 @@ function renderPageTabs() {
     navContainer.appendChild(btn);
   });
 }
+
 function render() {
-  renderQuickLinks();
+  renderPageTabs();
+
+  // Aktuelle Seite anhand der ID ermitteln
+  const currentPage = (typeof pages !== "undefined") ? pages.find(p => p.id === activePageId) || pages[0] : null;
+  if (!currentPage) return;
+
+  // 1. Quick Links der aktiven Seite rendern
+  const bar = document.getElementById('quickLinks');
+  if (bar) {
+    bar.innerHTML = '';
+    currentPage.quickLinks.forEach(l => {
+      const a = document.createElement('a');
+      a.className = 'quick-btn';
+      a.href = l.url;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      
+      a.innerHTML = `<img src="${getFavicon(l)}" data-fallback="${getFaviconFallback(l)}" onerror="this.onerror=null;this.src=this.dataset.fallback" alt=""><span>${l.name}</span>`;
+      bar.appendChild(a);
+    });
+  }
+
+  // 2. Spalten und Kacheln der aktiven Seite rendern
   const board = document.getElementById('board');
   if (!board) return;
   board.innerHTML = '';
 
-  columns.forEach((col) => {
+  currentPage.columns.forEach((col) => {
     const colEl = document.createElement('div');
     colEl.className = 'column';
     colEl.innerHTML = `
-      <div class=\"col-head\">
+      <div class="col-head">
         <h2>${col.title}</h2>
-        <div style=\"display:flex;align-items:center;gap:8px;\">
-          <span class=\"count\">${col.links.length}</span>
-          <span class=\"chevron\">▾</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="count">${col.links.length}</span>
+          <span class="chevron">▾</span>
         </div>
       </div>
-      <div class=\"col-body\">
-        <div class=\"tiles\"></div>
+      <div class="col-body">
+        <div class="tiles"></div>
       </div>
     `;
 
@@ -109,7 +120,6 @@ function render() {
       a.target = '_blank';
       a.rel = 'noopener';
       
-      // Übergibt das ganze Objekt 'l' statt nur der URL
       a.innerHTML = `<img src="${getFavicon(l)}" data-fallback="${getFaviconFallback(l)}" onerror="this.onerror=null;this.src=this.dataset.fallback" alt=""><span>${l.name}</span>`;
       tiles.appendChild(a);
     });
@@ -160,7 +170,7 @@ async function loadVersion(){
       sessionStorage.setItem(VERSION_CACHE_KEY, JSON.stringify({ text, title, ts: Date.now() }));
     } catch(e) { /* Speichern optional, kein Problem falls nicht möglich */ }
   } catch (e) {
-    // Bei Fehler (offline, Rate-Limit, file://-Aufruf, privates Repo) bleibt der Fallback "v1.0.0" stehen
+    // Bei Fehler bleibt der Fallback "v1.0.0" stehen
     console.warn('Build-Version konnte nicht geladen werden, zeige Fallback:', e);
   }
 }
