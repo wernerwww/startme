@@ -53,7 +53,32 @@ function renderQuickLinks() {
     bar.appendChild(a);
   });
 }
+let activePageId = localStorage.getItem("startme_active_page") || (typeof pages !== "undefined" && pages[0]?.id);
 
+function renderPageTabs() {
+  let navContainer = document.getElementById("pageNav");
+  if (!navContainer) {
+    navContainer = document.createElement("div");
+    navContainer.id = "pageNav";
+    navContainer.className = "page-nav";
+    const wrap = document.querySelector(".wrap header");
+    if (wrap) wrap.insertAdjacentElement("afterend", navContainer);
+  }
+  navContainer.innerHTML = "";
+  
+  pages.forEach(page => {
+    const btn = document.button || document.createElement("button");
+    const isAct = page.id === activePageId;
+    btn.className = `page-tab ${isAct ? "active" : ""}`;
+    btn.textContent = page.name;
+    btn.onclick = () => {
+      activePageId = page.id;
+      localStorage.setItem("startme_active_page", page.id);
+      render();
+    };
+    navContainer.appendChild(btn);
+  });
+}
 function render() {
   renderQuickLinks();
   const board = document.getElementById('board');
