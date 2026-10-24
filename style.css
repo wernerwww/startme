@@ -157,3 +157,35 @@ h1{font-size:32px;margin:0 0 8px;color:#fff;font-weight:600;}
 .tile:hover .arrow{opacity:1;color:var(--blue);}
 
 footer{margin-top:44px;color:var(--text-dim);font-size:12px;text-align:center;}
+.page-nav {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.page-tab {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.page-tab:hover {
+  background: var(--card-head);
+  color: var(--text);
+  border-color: var(--text-dim);
+}
+
+.page-tab.active {
+  background: var(--blue);
+  color: #fff;
+  border-color: var(--blue);
+  box-shadow: 0 4px 12px rgba(88, 166, 255, 0.25);
+}
