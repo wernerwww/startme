@@ -1,164 +1,154 @@
 # startme
 
-Ein einfaches, selbst gehostetes Link-Dashboard mit mehreren Seiten / Tabs – als persönliche Startseite im Browser. Keine Abhängigkeiten, kein Build-Prozess, reines HTML/CSS/JS.
-
-![Dashboard Vorschau](https://img.shields.io/badge/status-läuft-3fb950)
-
----
+Ein einfaches, selbst gehostetes Link-Dashboard mit flexiblen Spalten und Tabs – als persönliche Startseite im Browser. Keine Abhängigkeiten, kein Build-Prozess, reines HTML/CSS/JS.
 
 ## 1. Installation
 
 ### Repository klonen
 
-```bash
+```
 git clone https://github.com/wernerwww/startme.git
 cd startme
+
 ```
 
 ### Projekt starten
 
 Da es sich um ein reines Frontend-Projekt ohne Server-Abhängigkeiten handelt, reicht es, die `index.html` direkt im Browser zu öffnen:
 
-- **Windows:** Doppelklick auf `index.html`
-- **macOS:** `open index.html` im Terminal, oder Doppelklick im Finder
-- **Linux:** `xdg-open index.html` im Terminal, oder Doppelklick im Dateimanager
+* **Windows:** Doppelklick auf `index.html`
+
+* **macOS:** `open index.html` im Terminal oder Doppelklick im Finder
+
+* **Linux:** `xdg-open index.html` im Terminal oder Doppelklick im Dateimanager
 
 Das war's – es ist kein `npm install`, kein Server und keine weitere Konfiguration nötig.
 
-> 💡 **Tipp:** Setze `index.html` als Startseite deines Browsers, um das Dashboard bei jedem neuen Tab zu sehen.
+💡 **Tipp:** Setze `index.html` als Startseite deines Browsers, um das Dashboard bei jedem neuen Tab zu sehen.
 
----
+## 2. Links & Quick-Links anpassen
 
-## 2. Links & Seiten anpassen
+Alle Inhalte werden zentral in der Datei **`links.js`** gepflegt.
 
-Alle Inhalte und Seiten werden zentral in der Datei **`links.js`** gepflegt. Die Struktur verwendet ein `pages`-Array, in dem beliebig viele Hauptseiten (Tabs) mit eigenen Quick-Links und Spalten angelegt werden können.
+### A. Quick-Links hinzufügen (Prominente Highlight-Buttons)
 
-### Aufbau einer Seite
+Quick-Links erscheinen als hervorgehobene Buttons ganz oben auf der Seite. Du kannst Quick-Links sowohl **global** (für alle Tabs) als auch **spezifisch für einzelne Tabs** konfigurieren.
 
-```javascript
-const pages = [
-  {
-    id: "main",              // Eindeutige ID für die Seite
-    name: "🏠 Hauptseite",    // Name auf dem Tab-Button
-    quickLinks: [
-      { name: "Anzeigename", url: "https://beispiel.de" }
-    ],
-    columns: [
-      {
-        title: "Spaltenname",
-        links: [
-          { name: "Linkname", url: "https://beispiel.de" }
-        ]
-      }
-    ]
-  }
+#### Globaler Quick-Link (Erscheint immer oben)
+
+Füge deinen Link in das Array `quickLinks` ganz oben in `links.js` ein:
+
+```
+const quickLinks = [
+  { name: "Linkding", url: "https://linkding.adminforge.de/bookmarks" },
+  { name: "Drive", url: "https://drive.google.com/drive/home" },
+  { name: "Mein neuer Quicklink", url: "https://meine-seite.de" } // ← NEU
 ];
+
 ```
 
-### Neue Seite / Tab hinzufügen
+#### Tab-spezifischer Quick-Link
 
-Füge im `pages`-Array einfach ein weiteres Objekt hinzu:
+Wenn ein Quick-Link nur in einem bestimmten Tab sichtbar sein soll, trage ihn direkt beim entsprechenden Tab-Objekt ein:
 
-```javascript
-const pages = [
-  // ... bestehende Seiten ...
-  {
-    id: "projekte",
-    name: "🛠️ Projekte",
-    quickLinks: [
-      { name: "GitHub", url: "https://github.com" }
-    ],
-    columns: [
-      {
-        title: "Server",
-        links: [
-          { name: "Mein Server", url: "http://192.168.178.10" }
-        ]
-      }
-    ]
-  }
-];
+```
+{
+  id: "arbeit",
+  title: "Arbeit",
+  quickLinks: [
+    { name: "Firmen-Portal", url: "https://intranet.firma.de" } // ← Erscheint nur im Tab "Arbeit"
+  ],
+  columns: [ ... ]
+}
+
 ```
 
-### Neue Spalte hinzufügen
+### B. Normale Link-Kacheln hinzufügen
 
-Füge im `columns`-Array der jeweiligen Seite ein neues Objekt ein:
+Füge innerhalb der gewünschten Spalte eine neue Zeile im `links`-Array ein:
 
-```javascript
+```
+{ name: "Mein neuer Link", url: "https://meine-seite.de" },
+
+```
+
+**Beispiel:**
+
+```
+{
+  title: "Wichtig",
+  links: [
+    { name: "GitHub", url: "https://github.com" },
+    { name: "Vercel", url: "https://vercel.com" },
+    { name: "Mein neuer Link", url: "https://meine-seite.de" } // ← NEU
+  ]
+}
+
+```
+
+### C. Neue Spalte hinzufügen
+
+Füge im `columns`-Array des jeweiligen Tabs ein weiteres Objekt hinzu:
+
+```
 {
   title: "Meine neue Spalte",
   links: [
     { name: "Beispiel-Seite", url: "https://beispiel.de" }
   ]
 }
+
 ```
 
-> ℹ️ Das Dashboard nutzt ein **flexibles Auto-Fit-Grid**. Spalten passen sich automatisch an die Bildschirmbreite an (mind. 240px Breite) und brechen auf kleineren Bildschirmen oder mobilen Geräten sauber um.
+### D. Link entfernen, umbenennen & Icons
 
-### Neuen Link hinzufügen
+* **Entfernen:** Zeile in `links.js` löschen.
 
-Füge innerhalb einer Spalte einen Eintrag in deren `links`-Array ein:
+* **Umbenennen / URL ändern:** Werte bei `name` bzw. `url` direkt anpassen.
 
-```javascript
-{ name: "Mein neuer Link", url: "https://meine-seite.de" }
-```
+* **Automatische Favicons:** Werden anhand der Domain automatisch über den Google-Favicon-Dienst geladen. Die URL muss vollständig sein (inkl. `https://`).
 
-### Favicons
+* **Icons für lokale Links (z. B. Heimnetz/IPs):**
+  Lege eine Bilddatei in den Ordner `icons/` und gib sie im Link-Eintrag an:
 
-Favicons werden automatisch anhand der Domain der `url` geladen (über den Google- / DuckDuckGo-Favicon-Dienst). Es ist **kein zusätzliches Feld** nötig.
+  ```
+  { name: "Router", url: "http://192.168.178.1", icon: "icons/router.png" }
+  
+  ```
 
-⚠️ Wichtig: Die `url` muss eine vollständige, gültige Adresse sein (inkl. `https://`), sonst wird kein Favicon geladen.
+### E. Änderungen übernehmen
 
-### Icons für lokale Links (z. B. Server im Heimnetz)
-
-Für Links auf lokale IP-Adressen (z. B. `http://192.168.178.12:8888`) können Online-Dienste kein Icon abrufen. Verwende in diesen Fällen eigene Bilddateien im Ordner **`icons/`**:
-
-```javascript
-{ name: "OMV", url: "http://192.168.178.12:8888/#/login", icon: "icons/omv.png" }
-```
-
-1. Bilddatei (z. B. `.png`, ca. 64×64 px) im Ordner `icons/` ablegen.
-2. Den relativen Pfad im Feld `icon` eintragen.
-
-### Änderungen übernehmen
-
-Nach dem Bearbeiten von `links.js` einfach die `index.html` im Browser neu laden (F5) – kein Build-Schritt erforderlich.
-
----
+Nach dem Speichern von `links.js` einfach die `index.html` im Browser neu laden (**F5**).
 
 ## 3. Versionsanzeige (automatisch aus dem GitHub-Build)
 
-Im Footer des Dashboards wird automatisch die aktuelle Build-Nummer von GitHub Pages angezeigt (z. B. `Build #44`). Das Dashboard fragt beim Laden über die öffentliche GitHub-API den letzten Run des `pages-build-deployment`-Workflows ab.
+Im Footer des Dashboards wird automatisch die aktuelle Build-Nummer von GitHub Pages angezeigt (z. B. `Build #44`).
 
 **Voraussetzung:** In `app.js` muss der Repo-Name korrekt eingetragen sein:
 
-```javascript
-const REPO = "wernerwww/startme";
 ```
+const REPO = "wernerwww/startme";
 
-**Funktionsweise & Cache:**
-- Ergebnisse werden für 30 Minuten im `sessionStorage` gecacht, um das API-Limit nicht zu überschreiten.
-- Falls offline oder lokal geöffnet, wird als Fallback die statische Version (z. B. `v1.0.0`) angezeigt.
-
----
+```
 
 ## 4. Projektstruktur
 
-| Datei | Zweck |
-|---|---|
-| `index.html` | Grundgerüst der Seite |
-| `app.js` | Rendering-Logik (Tab-Navigation, Quick-Links, Spalten & Kacheln) |
-| `links.js` | **Zentrale Konfigurationsdatei (Seiten & Links)** |
-| `style.css` | Design & Layout (Dunkles Theme, flexibles Grid & Tab-Styling) |
-| `icons/` | Eigene Icon-Dateien für lokale Dienste |
-
----
+| Datei | Zweck | 
+| ----- | ----- | 
+| `index.html` | Grundgerüst der Seite | 
+| `app.js` | Rendering-Logik (baut die Spalten & Kacheln aus `links.js`) | 
+| `links.js` | **Hier werden Links & Quick-Links bearbeitet** | 
+| `style.css` | Design & Layout (dunkles Theme, Quick-Links Styling) | 
+| `icons/` | Eigene Icon-Dateien für lokale Links | 
 
 ## 5. Funktionen
 
-- **Tab-Navigation:** Mehrere Unterseiten/Kategorien bequem über obere Reiter umschalten
-- **Aktiver Tab wird gespeichert:** Die gewählte Seite bleibt im `localStorage` gemerkt
-- **Flexibles Responsive-Grid:** Passt sich dynamisch allen Bildschirmgrößen an (PC, Laptop, Tablet, Smartphone)
-- **Einklappbare Spalten:** Klick auf den Spaltenkopf klappt Inhalte auf/zu
-- **Automatisches Favicon-Fetching:** Holt Webseiten-Icons automatisch per Domain
-- **Kein Build-Prozess:** Sofort einsatzbereit ohne Abhängigkeiten
+* 4-Spalten-Raster, responsiv (2 Spalten auf Tablet, 1 Spalte auf Mobilgeräten)
+
+* Tab-Unterstützung zur Kategorisierung von Links
+
+* Schnellzugriff über Quick-Link-Buttons
+
+* Automatisches Laden von Favicons anhand der URL (mit Fallback für lokale IPs)
+
+* Kein Build-Prozess, keine Abhängigkeiten
