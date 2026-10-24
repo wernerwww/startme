@@ -1,11 +1,11 @@
 // ===================================================================
-// HIER MEHRERE SEITEN / KATEGORIEN PFLEGEN
+// MEHRERE SEITEN & KATEGORIEN (inkl. aller deiner originalen Links)
 // ===================================================================
 
 const pages = [
   {
     id: "main",
-    name: "🏠 Hauptseite",
+    name: "🏠 Dashboard",
     quickLinks: [
       { name: "Linkding", url: "https://linkding.adminforge.de/bookmarks" },
       { name: "Drive", url: "https://drive.google.com/drive/home" },
@@ -22,31 +22,80 @@ const pages = [
           { name: "TELEPOLIS", url: "https://www.heise.de/tp/" },
           { name: "Kuketz IT",  url: "https://www.kuketz-blog.de/" },
           { name: "Golem",  url: "https://www.golem.de/" },
+          { name: "NachDenkSeiten",  url: "https://www.nachdenkseiten.de/" },
+          { name: "Trausteiner",  url: "https://www.traunsteiner-tagblatt.de/" },   
+          { name: "Traunstein", url: "https://www.traunstein.de/" }, 
+          { name: "Deskmodder", url: "https://www.deskmodder.de/blog/" },
+          { name: "----------", url: "https" },   
         ]
       },
       {
         title: "Wichtig",
         links: [
           { name: "Gemini", url: "https://gemini.google.com" },
+          { name: "DeepSeek", url: "https://chat.deepseek.com/", icon: "icons/deepseek.png"  },
+          { name: "Qwen", url: "https://chat.qwen.ai/" },
+          { name: "----BBH-ev", url: "https://bbh-ev.org/" },
           { name: "Bitwarden", url: "https://bitwarden.com/" },
+          { name: "Github", url: "https://github.com/wernerwww/startme/", icon: "icons/github.png"  },
+          { name: "Kalender", url: "https://calendar.google.com/calendar/u/0/r" },
+          { name: "OneDrive", url: "https://onedrive.live.com" },
+          { name: "->PDF-Tools", url: "https://pdf.adminforge.de/de/" },
+          { name: "Vodafone", url: "https://www.vodafone.de/meinvodafone/services/" },
+        ]
+      },
+      {
+        title: "Home",
+        links: [
+          { name: "OMV", url: "http://192.168.178.12:8888/#/login", icon: "icons/omv.png" },
+          { name: "Open Webui", url: "http://192.168.178.12:3000", icon: "icons/openwebui.png" },
+          { name: "n8n", url: "http://192.168.178.12:5678", icon: "icons/n8n.png" },
+          { name: "AdGuard", url: "http://192.168.178.242", icon: "icons/adguard-home.png" },     
+          { name: "Paperless", url: "http://192.168.178.12:8010/accounts/login/?next=/", icon: "icons/paperless.png" },
+          { name: "Immich", url: "http://192.168.178.12:2283", icon: "icons/immich.png" },
+          { name: "Jellyfin", url: "http://192.168.178.12:8096/web/index.html#/home", icon: "icons/jellyfin.png" },
+          { name: "Syncthing", url: "http://192.168.178.12:8384", icon: "icons/syncthing.png" },
+        ]
+      },
+      {
+        title: "Home2",
+        links: [
+          { name: "Fritz 6670 MP", url: "http://192.168.178.1/", icon: "icons/fritzbox.png" },
+          { name: "Fritz 7590 AX", url: "http://192.168.178.30/", icon: "icons/fritzbox.png" },
+          { name: "FritzRepeater", url: "http://192.168.178.29/", icon: "icons/fritzbox.png" },
+          { name: "Drucker", url: "http://192.168.178.32/general/status.html", icon: "icons/printer.png" },
+          { name: "Fritz extern",  url: "https://[2a02:810d:0:3d::33e0]:12464/#/", icon: "icons/fritzbox.png"  },
+        ]
+      },
+      {
+        title: "Sonstiges",
+        links: [
+          { name: "Cruiselevel", url: "https://cruiselevel.de/" },
+          { name: "flightnews24", url: "https://flightnews24.de/" },
+          { name: "flusi.info", url: "https://www.flusi.info/forum/" },
+          { name: "FSelite", url: "https://fselite.net/latest/" },
+          { name: "----", url: "https" },
+          { name: "ChinaHandy", url: "https://www.smartzone.de/neues/" },
+          { name: "----", url: "https" },
+          { name: "GBVH", url: "https://www.gartenbauverein-haslach.de/", icon: "icons/gbvh.png" },
+          { name: "GBVH-Test", url: "https://www.gbv-haslach.de/", icon: "icons/gbvh.png" },
+          { name: "GBV-Fotos", url: "https://fotos.gbv-haslach.de/", icon: "icons/gbvh.png" },
+          { name: "GBV-Doku", url: "https://fileman.gbv-haslach.de/#/", icon: "icons/gbvh.png" },
         ]
       }
-      // ... weitere Spalten für die Hauptseite ...
     ]
   },
   {
-    id: "projects",
-    name: "🛠️ Projekte & Admin",
+    id: "weitere",
+    name: "📂 Weitere Seite",
     quickLinks: [
-      { name: "GitHub", url: "https://github.com/wernerwww/startme/" },
-      { name: "Vercel", url: "https://vercel.com" },
+      { name: "GitHub Repo", url: "https://github.com/wernerwww/startme/" }
     ],
     columns: [
       {
-        title: "Server & Dienste",
+        title: "Tools & Mehr",
         links: [
-          { name: "OMV", url: "http://192.168.178.12:8888/#/login", icon: "icons/omv.png" },
-          { name: "AdGuard", url: "http://192.168.178.242", icon: "icons/adguard-home.png" },
+          { name: "Beispiel-Link", url: "https://example.com" }
         ]
       }
     ]
