@@ -5,7 +5,7 @@
 const pages = [
   {
     id: "main",
-    name: "🏠 Dashboard",
+    name: "🏠 Main",
     quickLinks: [
       { name: "Linkding", url: "https://linkding.adminforge.de/bookmarks" },
       { name: "Drive", url: "https://drive.google.com/drive/home" },
@@ -87,15 +87,17 @@ const pages = [
   },
   {
     id: "weitere",
-    name: "📂 Weitere Seite",
+    name: "📂 Seite+",
     quickLinks: [
-      { name: "GitHub Repo", url: "https://github.com/wernerwww/startme/" }
+      { name: "Linkding", url: "https://linkding.adminforge.de/bookmarks" },
+      { name: "SearXNG", url: "http://192.168.178.12:8088/" },
     ],
     columns: [
       {
         title: "Tools & Mehr",
         links: [
-          { name: "Beispiel-Link", url: "https://example.com" }
+          { name: "Github", url: "https://github.com/wernerwww/startme/", icon: "icons/github.png"  },   
+          { name: "----------", url: "https" },  
         ]
       }
     ]
