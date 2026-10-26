@@ -36,8 +36,7 @@ const pages = [
           { name: "DeepSeek", url: "https://chat.deepseek.com/", icon: "icons/deepseek.png"  },
           { name: "Qwen", url: "https://chat.qwen.ai/" },
           { name: "----BBH-ev", url: "https://bbh-ev.org/" },
-          { name: "Bitwarden", url: "https://bitwarden.com/" },
-          { name: "Github", url: "https://github.com/wernerwww/startme/", icon: "icons/github.png"  },
+          { name: "----------", url: "https" },
           { name: "Kalender", url: "https://calendar.google.com/calendar/u/0/r" },
           { name: "OneDrive", url: "https://onedrive.live.com" },
           { name: "->PDF-Tools", url: "https://pdf.adminforge.de/de/" },
@@ -48,23 +47,13 @@ const pages = [
         title: "Home",
         links: [
           { name: "OMV", url: "http://192.168.178.12:8888/#/login", icon: "icons/omv.png" },
+          { name: "----------", url: "https" },
           { name: "Open Webui", url: "http://192.168.178.12:3000", icon: "icons/openwebui.png" },
-          { name: "n8n", url: "http://192.168.178.12:5678", icon: "icons/n8n.png" },
           { name: "AdGuard", url: "http://192.168.178.242", icon: "icons/adguard-home.png" },     
           { name: "Paperless", url: "http://192.168.178.12:8010/accounts/login/?next=/", icon: "icons/paperless.png" },
           { name: "Immich", url: "http://192.168.178.12:2283", icon: "icons/immich.png" },
           { name: "Jellyfin", url: "http://192.168.178.12:8096/web/index.html#/home", icon: "icons/jellyfin.png" },
           { name: "Syncthing", url: "http://192.168.178.12:8384", icon: "icons/syncthing.png" },
-        ]
-      },
-      {
-        title: "Home2",
-        links: [
-          { name: "Fritz 6670 MP", url: "http://192.168.178.1/", icon: "icons/fritzbox.png" },
-          { name: "Fritz 7590 AX", url: "http://192.168.178.30/", icon: "icons/fritzbox.png" },
-          { name: "FritzRepeater", url: "http://192.168.178.29/", icon: "icons/fritzbox.png" },
-          { name: "Drucker", url: "http://192.168.178.32/general/status.html", icon: "icons/printer.png" },
-          { name: "Fritz extern",  url: "https://[2a02:810d:0:3d::33e0]:12464/#/", icon: "icons/fritzbox.png"  },
         ]
       },
       {
@@ -98,6 +87,16 @@ const pages = [
         links: [
           { name: "Github", url: "https://github.com/wernerwww/startme/", icon: "icons/github.png"  },   
           { name: "----------", url: "https" },  
+        ]
+      },
+      {
+        title: "Home2",
+        links: [
+          { name: "Fritz 6670 MP", url: "http://192.168.178.1/", icon: "icons/fritzbox.png" },
+          { name: "Fritz 7590 AX", url: "http://192.168.178.30/", icon: "icons/fritzbox.png" },
+          { name: "FritzRepeater", url: "http://192.168.178.29/", icon: "icons/fritzbox.png" },
+          { name: "Drucker", url: "http://192.168.178.32/general/status.html", icon: "icons/printer.png" },
+          { name: "Fritz extern",  url: "https://[2a02:810d:0:3d::33e0]:12464/#/", icon: "icons/fritzbox.png"  },
         ]
       }
     ]
